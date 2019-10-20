@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using TGL.WebApp.Models;
 
+
+
+
 namespace TGL.WebApp.Data
 {
     public class StudentStore
@@ -31,17 +34,6 @@ namespace TGL.WebApp.Data
                 Nit = "1234567"
 
             });
-
-            Students.Add(new Student
-            {
-                Id = Guid.NewGuid(),
-                Age = 17,
-                Name = "Pedro",
-                LastName = "Sanchez",
-                Nit = "12345678"
-
-            });
-
 
         }
 
