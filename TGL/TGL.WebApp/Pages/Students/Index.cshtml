@@ -28,8 +28,19 @@
                     <td>@item.LastName</td>
                     <td>@item.Nit</td>
                     <td>@item.Age</td>
+
+                    <td>
+                        <a class="btn" 
+                           asp-route-id="@item.Id"
+                           asp-page="Edit">
+                            Edit
+                        </a>
+
+                    </td>
+
                     <td>
                         <button type="submit"
+
                                 asp-page-handler="delete"
                                 asp-route-id="@item.Id">
                             delete
