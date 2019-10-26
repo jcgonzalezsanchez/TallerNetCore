@@ -7,6 +7,10 @@ namespace TGL.WebApp.Models
 {
     public class Student
     {
+        public Student()
+        {
+            Id = Guid.NewGuid();
+        }
         public Guid Id { get; set; }
         public string Nit { get; set; }
         public string Name { get; set; }
