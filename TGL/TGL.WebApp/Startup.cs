@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TGL.WebApp.Data;
@@ -35,7 +36,10 @@ namespace TGL.WebApp
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddSingleton<StudentStore>();
+            services.AddScoped<StudentStore>();
+
+            services.AddDbContext<TGLContext>(opt =>
+            opt.UseSqlServer(Configuration.GetConnectionString("TglSQL")));
 
         }
 
