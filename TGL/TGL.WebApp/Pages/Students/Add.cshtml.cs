@@ -27,6 +27,10 @@ namespace TGL.WebApp.Pages.Students
 
         public IActionResult OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             //Add
             StudentStore.AddStudent(Student);
             return RedirectToPage("./Index");

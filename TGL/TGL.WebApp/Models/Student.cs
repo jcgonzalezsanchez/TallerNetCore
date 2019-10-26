@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,10 +12,14 @@ namespace TGL.WebApp.Models
         {
             Id = Guid.NewGuid();
         }
+
         public Guid Id { get; set; }
         public string Nit { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string LastName { get; set; }
-        public int Age { get; set; }
+        [MaxLength(2)]
+        public int? Age { get; set; }
     }
 }
