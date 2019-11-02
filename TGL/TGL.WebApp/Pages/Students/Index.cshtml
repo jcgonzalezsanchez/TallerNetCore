@@ -8,7 +8,7 @@
 
 <h1>Students</h1>
 <form method="post">
-    <table>
+    <table class="responsive-table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -39,7 +39,7 @@
                     </td>
 
                     <td>
-                        <button type="submit"
+                        <button type="submit" class="btn"
 
                                 asp-page-handler="delete"
                                 asp-route-id="@item.Id">
@@ -54,6 +54,6 @@
         </tbody>
     </table>
 </form>
-    <a asp-page="Add">Create new student</a>
+    <a asp-page="Add" class="btn">New student</a>
 
 
