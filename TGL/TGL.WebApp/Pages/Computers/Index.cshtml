@@ -1,0 +1,55 @@
+﻿@page
+@model TGL.WebApp.Pages.Computers.IndexModel
+@addTagHelper`*, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+
+
+<h1>Computers</h1>
+<form method="post">
+    <table class="responsive-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Cpu</th>
+                <th>Ram</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Computers)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Brand</td>
+                    <td>@item.Model</td>
+                    <td>@item.Cpu</td>
+                    <td>@item.Ram</td>
+
+                    <td>
+                        <a class="btn"
+                           asp-route-id="@item.Id"
+                           asp-page="Edit">
+                            Edit
+                        </a>
+
+                    </td>
+
+                    <td>
+                        <button type="submit" class="btn"
+                                asp-page-handler="delete"
+                                asp-route-id="@item.Id">
+                            delete
+                        </button>
+                    </td>
+                </tr>
+
+            }
+
+
+        </tbody>
+    </table>
+</form>
+<a asp-page="Add" class="btn">New computer</a>

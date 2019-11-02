@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -52,7 +53,7 @@ namespace TGL.WebApp.Data
 
         public List<Student> GetStudents()
         {
-            return Context.Student.ToList();
+            return Context.Student.Include(x=> x.Computers).ToList();
         }
     }
 }

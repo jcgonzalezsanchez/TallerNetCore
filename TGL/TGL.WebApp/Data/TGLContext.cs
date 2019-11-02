@@ -10,7 +10,7 @@ namespace TGL.WebApp.Data
     public class TGLContext : DbContext
     {
         public DbSet<Student> Student { get; set; }
-        public DbSet<Computer> Computers { get; set; }
+        public DbSet<Computer> Computer { get; set; }
 
         public TGLContext(DbContextOptions<TGLContext> options)
             :base(options)

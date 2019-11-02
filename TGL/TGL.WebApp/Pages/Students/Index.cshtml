@@ -22,31 +22,39 @@
         <tbody>
             @foreach (var item in Model.Students)
             {
-                <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Name</td>
-                    <td>@item.LastName</td>
-                    <td>@item.Nit</td>
-                    <td>@item.Age</td>
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.LastName</td>
+                <td>@item.Nit</td>
+                <td>@item.Age</td>
 
-                    <td>
-                        <a class="btn" 
-                           asp-route-id="@item.Id"
-                           asp-page="Edit">
-                            Edit
-                        </a>
+                <td>
+                    <a class="btn"
+                       asp-route-id="@item.Id"
+                       asp-page="Edit">
+                        Edit
+                    </a>
 
-                    </td>
+                </td>
 
-                    <td>
-                        <button type="submit" class="btn"
+                <td>
+                    <button type="submit" class="btn"
+                            asp-page-handler="delete"
+                            asp-route-id="@item.Id">
+                        delete
+                    </button>
+                </td>
+                <td>
+                    <a class="btn"
+                       asp-route-studentid="@item.Id"
+                       asp-page="../Computers/Add">
+                        Edit
+                    </a>
 
-                                asp-page-handler="delete"
-                                asp-route-id="@item.Id">
-                            delete
-                        </button>
-                    </td>
-                </tr>
+                </td>
+
+            </tr>
 
             }
 
