@@ -11,23 +11,18 @@ namespace TGL.WebApp.Data
         public TGLContext Context { get; set; }
         public ComputerStore(TGLContext context)
         {
-
             Context = context;
-
         }
 
-        
-
-        internal void DeleteComputers(Guid id)
+        internal void EditComputer(Computer computer)
         {
-            var student = Context.Student.FirstOrDefault(x => x.Id == id);
-            Context.Student.Remove(student);
+            Computer currentComputer = GetComputerById(computer.Id);
+            currentComputer.Brand = computer.Brand;
+            currentComputer.Model = computer.Model;
+            currentComputer.Cpu = computer.Cpu;
+            currentComputer.Ram = computer.Ram;
+            Context.Computer.Update(currentComputer);
             Context.SaveChanges();
-        }
-
-        internal List<Computer> GetComputers()
-        {
-            return Context.Computer.ToList();
         }
 
         internal Computer GetComputerById(Guid id)
@@ -41,17 +36,16 @@ namespace TGL.WebApp.Data
             Context.SaveChanges();
         }
 
-        internal void EditComputer(Computer computer)
+        internal void DeleteComputer(Guid id)
         {
-            Computer currentComputer = GetComputerById(computer.Id);
-            currentComputer.Brand = computer.Brand;
-            currentComputer.Model = computer.Model;
-            currentComputer.Cpu = computer.Cpu;
-            currentComputer.Ram = computer.Cpu;
-            Context.Computer.Update(currentComputer);
+            var computer = Context.Computer.FirstOrDefault(x => x.Id == id);
+            Context.Computer.Remove(computer);
             Context.SaveChanges();
+        }
 
-               
+        internal List<Computer> GetComputers()
+        {
+            return Context.Computer.ToList();
         }
     }
 }

@@ -17,7 +17,9 @@ namespace TGL.WebApp.Pages.Computers
             ComputerStore = computerStore;
         }
 
+        [BindProperty]
         public Computer Computer { get; set; }
+
         public void OnGet(Guid id)
         {
             Computer = ComputerStore.GetComputerById(id);

@@ -6,3 +6,20 @@
 
 <h1>Edit</h1>
 
+<form method="post">
+    <input hidden asp-for="Computer.Id" />
+    Brand
+    <input asp-for="Computer.Brand" />
+    Model
+    <input asp-for="Computer.Model" />
+    Cpu
+    <input asp-for="Computer.Cpu" />
+    Ram
+    <input asp-for="Computer.Ram" />
+
+    <button type="submit">
+        Save
+    </button>
+</form>
+
+<a asp-page="./Index">Return to list</a>

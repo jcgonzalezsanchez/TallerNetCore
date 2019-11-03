@@ -21,7 +21,7 @@ namespace TGL.WebApp.Pages.Computers
 
         public IActionResult OnPostDelete(Guid id)
         {
-            ComputerStore.DeleteComputers(id);
+            ComputerStore.DeleteComputer(id);
             return RedirectToPage();
         }
         public void OnGet()

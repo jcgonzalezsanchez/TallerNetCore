@@ -34,6 +34,7 @@ namespace TGL.WebApp.Pages.Computers
                 return Page();
             }
             //Add
+            Computer.StudentId = StudentId;
             ComputerStore.AddComputer(Computer);
             return RedirectToPage("./Index");
         }

@@ -14,9 +14,7 @@ namespace TGL.WebApp.Data
         public TGLContext Context { get; set; }
         public StudentStore(TGLContext context)
         {
-
             Context = context;
-
         }
 
         internal void EditStudent(Student student)
@@ -28,7 +26,6 @@ namespace TGL.WebApp.Data
             currentStudent.Age = student.Age;
             Context.Student.Update(currentStudent);
             Context.SaveChanges();
-
         }
 
         internal Student GetStudentById(Guid id)
@@ -38,14 +35,12 @@ namespace TGL.WebApp.Data
 
         internal void AddStudent(Student student)
         {
-
             Context.Student.Add(student);
             Context.SaveChanges();
         }
 
         internal void DeleteStudent(Guid id)
         {
-
             var student = Context.Student.FirstOrDefault(x => x.Id == id);
             Context.Student.Remove(student);
             Context.SaveChanges();

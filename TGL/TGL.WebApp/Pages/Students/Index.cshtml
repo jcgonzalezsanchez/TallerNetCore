@@ -30,6 +30,13 @@
                 <td>@item.Age</td>
 
                 <td>
+                    @foreach (var computer in item.Computers)
+                    {
+                        <ul>@computer.Brand | @computer.Model | @computer.Cpu | @computer.Ram</ul>
+                    }
+                </td>
+
+                <td>
                     <a class="btn"
                        asp-route-id="@item.Id"
                        asp-page="Edit">
@@ -46,10 +53,10 @@
                     </button>
                 </td>
                 <td>
-                    <a class="btn"
+                    <a class="waves-effect waves-light btn"
                        asp-route-studentid="@item.Id"
                        asp-page="../Computers/Add">
-                        Edit
+                        <i class="material-icons">computer</i>
                     </a>
 
                 </td>
