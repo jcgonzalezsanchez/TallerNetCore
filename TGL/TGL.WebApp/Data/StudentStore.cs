@@ -24,6 +24,7 @@ namespace TGL.WebApp.Data
             currentStudent.LastName = student.LastName;
             currentStudent.Nit = student.Nit;
             currentStudent.Age = student.Age;
+
             Context.Student.Update(currentStudent);
             Context.SaveChanges();
         }

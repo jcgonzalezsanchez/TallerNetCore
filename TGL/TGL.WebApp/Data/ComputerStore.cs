@@ -21,6 +21,8 @@ namespace TGL.WebApp.Data
             currentComputer.Model = computer.Model;
             currentComputer.Cpu = computer.Cpu;
             currentComputer.Ram = computer.Ram;
+            currentComputer.StudentId = computer.StudentId;
+
             Context.Computer.Update(currentComputer);
             Context.SaveChanges();
         }
@@ -43,7 +45,7 @@ namespace TGL.WebApp.Data
             Context.SaveChanges();
         }
 
-        internal List<Computer> GetComputers()
+        public List<Computer> GetComputers()
         {
             return Context.Computer.ToList();
         }

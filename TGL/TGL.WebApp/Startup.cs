@@ -40,7 +40,14 @@ namespace TGL.WebApp
             services.AddScoped<ComputerStore>();
 
             services.AddDbContext<TGLContext>(opt =>
-            opt.UseSqlServer(Configuration.GetConnectionString("TglSQL")));
+            opt.UseSqlServer(Configuration.GetConnectionString("TglSQL"),
+            sqlServerOptionsAction: sqlOptions =>
+            {
+                sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(10),
+                errorNumbersToAdd: null);
+            }));
 
         }
 

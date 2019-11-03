@@ -6,8 +6,13 @@
 
 <h1>Edit</h1>
 
+<!--<a asp-page="./Index" class="btn-floating btn-large waves-effect waves-light">
+    <i class="material-icons">arrow_back</i>
+</a>-->
+
 <form method="post">
     <input hidden asp-for="Computer.Id" />
+    <input hidden asp-for="Computer.StudentId" />
     Brand
     <input asp-for="Computer.Brand" />
     Model
