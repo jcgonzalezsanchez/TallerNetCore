@@ -12,7 +12,6 @@ namespace TGL.WebApp.Models
         {
             Id = Guid.NewGuid();
         }
-
         public Guid Id { get; set; }
         public string Nit { get; set; }
         [Required]
